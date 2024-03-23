@@ -1,9 +1,16 @@
 import React, { useState } from "react";
+
 import { Box, Button, Flex, Heading, Image, Input, Link, Text, VStack } from "@chakra-ui/react";
 import { FaCalendar, FaClock, FaComment, FaTasks, FaUser, FaVideo } from "react-icons/fa";
 
 const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [timeLogs, setTimeLogs] = useState([]);
+
+  const handleTimeCard = () => {
+    const now = new Date();
+    setTimeLogs([...timeLogs, now]);
+  };
 
   const handleLogin = () => {
     // TODO: Implement login functionality
@@ -32,12 +39,17 @@ const Index = () => {
               </Heading>
               <Text>割り当てられたタスクの表示とリクエスト</Text>
             </Box>
-            <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
+            <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center" cursor="pointer" onClick={handleTimeCard}>
               <FaClock size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
                 タイムカード
               </Heading>
-              <Text>リモートワーク時間の記録</Text>
+              <Text mb={4}>リモートワーク時間の記録</Text>
+              {timeLogs.map((log, index) => (
+                <Text key={index} fontSize="sm" color="gray.600">
+                  {`${log.getFullYear()}/${(log.getMonth() + 1).toString().padStart(2, "0")}/${log.getDate().toString().padStart(2, "0")} ${log.getHours().toString().padStart(2, "0")}:${log.getMinutes().toString().padStart(2, "0")}:${log.getSeconds().toString().padStart(2, "0")}`}
+                </Text>
+              ))}
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaClock size={48} color="blue.600" />
