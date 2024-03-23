@@ -11,12 +11,17 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const fonts = {
+  heading: `'Noto Sans JP', sans-serif`,
+  body: `'Noto Sans JP', sans-serif`,
+};
+
+const theme = extendTheme({ colors, fonts });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

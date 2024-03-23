@@ -14,95 +14,95 @@ const Index = () => {
     <Box bg="blue.50" minH="100vh" py={8}>
       <Flex direction="column" align="center">
         <Heading as="h1" size="2xl" mb={8} color="blue.600" fontWeight="bold">
-          Student Organization Management
+          学生団体管理
         </Heading>
         {isLoggedIn ? (
           <Flex direction={["column", "row"]} justify="center" align="center" wrap="wrap">
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaUser size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Personal Page
+                個人ページ
               </Heading>
-              <Text>View and update your profile</Text>
+              <Text>プロフィールの閲覧と更新</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaTasks size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Task Management
+                タスク管理
               </Heading>
-              <Text>View assigned tasks and make requests</Text>
+              <Text>割り当てられたタスクの表示とリクエスト</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaClock size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Time Card
+                タイムカード
               </Heading>
-              <Text>Track remote work hours</Text>
+              <Text>リモートワーク時間の記録</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaClock size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Activity Tracking
+                活動記録
               </Heading>
-              <Text>Track activity time and view rankings</Text>
+              <Text>活動時間の記録とランキングの表示</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaVideo size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Meeting Recordings
+                会議録画
               </Heading>
-              <Text>View and upload missed meeting recordings</Text>
+              <Text>欠席した会議の録画の閲覧とアップロード</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaCalendar size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Schedule Calendar
+                スケジュールカレンダー
               </Heading>
-              <Text>View and add events to the internal calendar</Text>
+              <Text>内部カレンダーのイベントの閲覧と追加</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <Link href="https://zoom.us" isExternal>
                 <Image src="https://images.unsplash.com/photo-1632435499182-e436787ce107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHx6b29tJTIwbG9nb3xlbnwwfHx8fDE3MTExNjYxNDN8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Zoom" w={48} h={48} mx="auto" />
                 <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                  Join Zoom Meeting
+                  Zoomミーティングに参加
                 </Heading>
               </Link>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaComment size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Chat Rooms
+                チャットルーム
               </Heading>
-              <Text>Categorized chat rooms for members</Text>
+              <Text>メンバー用カテゴリ別チャットルーム</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <Image src="https://images.unsplash.com/photo-1589330694653-ded6df03f754?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxjZXJ0aWZpY2F0ZXxlbnwwfHx8fDE3MTExNjYxNDN8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Certificate" w={48} h={48} mx="auto" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Activity Certificates
+                活動証明書
               </Heading>
-              <Text>Issue certificates based on activity</Text>
+              <Text>活動に基づいて証明書を発行</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaVideo size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Casual Video Calls
+                カジュアルビデオ通話
               </Heading>
-              <Text>Casual video chats with members</Text>
+              <Text>メンバーとのカジュアルなビデオチャット</Text>
             </Box>
             <Box m={4} p={6} bg="white" borderRadius="lg" boxShadow="md" textAlign="center">
               <FaUser size={48} color="blue.600" />
               <Heading as="h2" size="xl" mt={4} mb={2} color="blue.600">
-                Member Profiles
+                メンバープロフィール
               </Heading>
-              <Text>View profiles of all organization members</Text>
+              <Text>全団体メンバーのプロフィールを閲覧</Text>
             </Box>
           </Flex>
         ) : (
           <VStack spacing={4}>
-            <Input placeholder="Username" />
-            <Input placeholder="Password" type="password" />
+            <Input placeholder="ユーザー名" />
+            <Input placeholder="パスワード" type="password" />
             <Button colorScheme="blue" onClick={handleLogin}>
-              Login
+              ログイン
             </Button>
           </VStack>
         )}
